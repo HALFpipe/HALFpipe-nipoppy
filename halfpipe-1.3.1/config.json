@@ -1,0 +1,38 @@
+{
+  "NAME": "halfpipe",
+  "VERSION": "1.3.1",
+  "CONTAINER_INFO": {
+    "FILE": "[[NIPOPPY_DPATH_CONTAINERS]]/[[PIPELINE_NAME]]_[[PIPELINE_VERSION]].sif",
+    "URI": "docker://halfpipe/[[PIPELINE_NAME]]:[[PIPELINE_VERSION]]"
+  },
+  "CONTAINER_CONFIG": {
+    "ENV_VARS": {},
+    "ARGS": []
+  },
+  "STEPS": [
+    {
+      "NAME": "spec",
+      "ANALYSIS_LEVEL": "group",
+      "INVOCATION_FILE": "spec-invocation.json",
+      "DESCRIPTOR_FILE": "spec-descriptor.json"
+    },
+    {
+      "NAME": "halfpipe",
+      "ANALYSIS_LEVEL": "participant",
+      "INVOCATION_FILE": "halfpipe-invocation.json",
+      "DESCRIPTOR_FILE": "halfpipe-descriptor.json",
+      "HPC_CONFIG_FILE": "hpc.json",
+      "PYBIDS_IGNORE_FILE": "pybids_ignore.json"
+    },
+    {
+      "NAME": "tracking",
+      "ANALYSIS_LEVEL": "participant_session",
+      "TRACKER_CONFIG_FILE": "tracker.json"
+    }
+  ],
+  "VARIABLES": {
+    "FREESURFER_LICENSE_FILE": "Path to FreeSurfer license file"
+  },
+  "PIPELINE_TYPE": "processing",
+  "SCHEMA_VERSION": "1"
+}

@@ -1,0 +1,9 @@
+{
+    "workdir": "[[NIPOPPY_DPATH_PIPELINE_OUTPUT]]",
+    "skip_spec_ui": true,
+    "nipype_omp_nthreads": 1,
+    "fs_license_file": "[[FREESURFER_LICENSE_FILE]]",
+    "nipype_memory_gb": 4,
+    "nipype_n_procs": 1,
+    "keep": "none"
+}

@@ -1,0 +1,88 @@
+{
+    "name": "halfpipe",
+    "description": "halfpipe",
+    "tool-version": "1.3.1",
+    "schema-version": "0.5",
+    "command-line": "halfpipe [WORKDIR] [SKIP_SPEC_UI] [NIPYPE_OMP_NTHREADS] [FS_LICENSE_FILE] [NIPYPE_MEMORY_GB] [NIPYPE_N_PROCS] [KEEP]",
+    "container-image": {
+        "type": "docker",
+        "image": "halfpipe/halfpipe:1.3.1"
+    },
+    "inputs": [
+        {
+            "name": "workdir",
+            "id": "workdir",
+            "description": "directory where output and intermediate files are stored",
+            "type": "String",
+            "optional": false,
+            "command-line-flag": "--workdir",
+            "value-key": "[WORKDIR]"
+        },
+        {
+            "name": "skip_spec_ui",
+            "id": "skip_spec_ui",
+            "description": "No description provided.",
+            "type": "Flag",
+            "optional": true,
+            "command-line-flag": "--skip-spec-ui",
+            "value-key": "[SKIP_SPEC_UI]"
+        },
+        {
+            "name": "nipype_omp_nthreads",
+            "id": "nipype_omp_nthreads",
+            "description": "How many threads should be used by each process when running the workflow",
+            "type": "Number",
+            "optional": true,
+            "command-line-flag": "--nipype-omp-nthreads",
+            "value-key": "[NIPYPE_OMP_NTHREADS]"
+        },
+        {
+            "name": "fs_license_file",
+            "id": "fs_license_file",
+            "description": "No description provided.",
+            "type": "String",
+            "optional": true,
+            "command-line-flag": "--fs-license-file",
+            "value-key": "[FS_LICENSE_FILE]"
+        },
+        {
+            "name": "nipype_memory_gb",
+            "id": "nipype_memory_gb",
+            "description": "How much memory should be used when running the workflow",
+            "type": "Number",
+            "optional": true,
+            "command-line-flag": "--nipype-memory-gb",
+            "value-key": "[NIPYPE_MEMORY_GB]"
+        },
+        {
+            "name": "nipype_n_procs",
+            "id": "nipype_n_procs",
+            "description": "How many processes to use when running the workflow",
+            "type": "Number",
+            "optional": true,
+            "command-line-flag": "--nipype-n-procs",
+            "value-key": "[NIPYPE_N_PROCS]"
+        },
+        {
+            "name": "keep",
+            "id": "keep",
+            "description": "Choose which intermediate files to keep so that the workflow does not fill up your temporary folder",
+            "type": "String",
+            "optional": true,
+            "default-value": "some",
+            "command-line-flag": "--keep",
+            "value-key": "[KEEP]",
+            "value-choices": [
+                "all",
+                "some",
+                "none"
+            ]
+        }
+    ],
+    "tags": {},
+    "suggested-resources": {
+        "cpu-cores": 1,
+        "ram": 1,
+        "walltime-estimate": 60
+    }
+}

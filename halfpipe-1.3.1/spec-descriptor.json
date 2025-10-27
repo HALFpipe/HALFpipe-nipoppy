@@ -1,0 +1,34 @@
+{
+  "name": "halfpipe-spec",
+  "description": "Create a spec file for HALFpipe with the recommendations from the ENIGMA consortium for resting-state fMRI",
+  "tool-version": "1.3.1",
+  "schema-version": "0.5",
+  "command-line": "[SCRIPT_PATH] [BIDS_DIR] [WORKDIR]",
+  "inputs": [
+    {
+      "name": "script_path",
+      "id": "script_path",
+      "description": "Path to the script to run.",
+      "type": "String",
+      "optional": false,
+      "value-key": "[SCRIPT_PATH]"
+    },
+    {
+      "name": "bids_dir",
+      "id": "bids_dir",
+      "description": "The root folder of a BIDS valid dataset (sub-* folders should be found at the top level in this folder).",
+      "type": "String",
+      "optional": false,
+      "value-key": "[BIDS_DIR]"
+    },
+    {
+      "name": "workdir",
+      "id": "workdir",
+      "description": "directory where output and intermediate files are stored",
+      "type": "String",
+      "optional": false,
+      "command-line-flag": "--workdir",
+      "value-key": "[WORKDIR]"
+    }
+  ]
+}

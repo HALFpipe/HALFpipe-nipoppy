@@ -1,0 +1,5 @@
+{
+    "script_path": "[[NIPOPPY_DPATH_PIPELINES]]/processing/halfpipe-1.3.1/make_spec.sh",
+    "bids_dir": "[[NIPOPPY_DPATH_BIDS]]",
+    "workdir": "[[NIPOPPY_DPATH_PIPELINE_OUTPUT]]"
+}
