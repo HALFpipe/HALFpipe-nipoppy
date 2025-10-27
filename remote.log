@@ -1,0 +1,1 @@
+c78ecc27-fdee-4630-a23f-7a988ee685f4 autoenable=true bucket=datalad datacenter=US encryption=none host=b7b557172bb5cd20f55ba90d802f9597.eu.r2.cloudflarestorage.com name=r2 port=80 protocol=https publicurl=https://datalad.fmri.science region=auto signature=v4 storageclass=STANDARD type=S3 timestamp=1761586715s
