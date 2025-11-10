@@ -3,7 +3,7 @@
   "description": "Create a spec file for HALFpipe with the recommendations from the ENIGMA consortium for resting-state fMRI",
   "tool-version": "1.3.1",
   "schema-version": "0.5",
-  "command-line": "[SCRIPT_PATH] [BIDS_DIR] [WORKDIR]",
+  "command-line": "[SCRIPT_PATH] [BIDS_DIR] [WORKDIR] [SKULL_STRIP_ALGORITHM] [RUN_RECONALL]",
   "inputs": [
     {
       "name": "script_path",
@@ -27,8 +27,27 @@
       "description": "directory where output and intermediate files are stored",
       "type": "String",
       "optional": false,
-      "command-line-flag": "--workdir",
       "value-key": "[WORKDIR]"
+    },
+    {
+      "name": "skull_strip_algorithm",
+      "id": "skull_strip_algorithm",
+      "description": "the algorithm used for skull stripping by fmriprep. Options are `none` and `ants`",
+      "type": "String",
+      "optional": true,
+      "value-choices": ["ants", "none"],
+      "default-value": "ants",
+      "value-key": "[SKULL_STRIP_ALGORITHM]"
+    },
+    {
+      "name": "run_reconall",
+      "id": "run_reconall",
+      "description": "also run freesurfer",
+      "type": "String",
+      "value-choices": ["false", "true"],
+      "optional": true,
+      "default-value": "false",
+      "value-key": "[RUN_RECONALL]"
     }
   ]
 }

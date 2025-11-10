@@ -7,14 +7,18 @@
   },
   "CONTAINER_CONFIG": {
     "ENV_VARS": {},
-    "ARGS": []
+    "ARGS": [
+      "--bind",
+      "[[FREESURFER_LICENSE_FILE]]:/opt/freesurfer/license.txt"
+    ]
   },
   "STEPS": [
     {
       "NAME": "spec",
       "ANALYSIS_LEVEL": "group",
       "INVOCATION_FILE": "spec-invocation.json",
-      "DESCRIPTOR_FILE": "spec-descriptor.json"
+      "DESCRIPTOR_FILE": "spec-descriptor.json",
+      "GENERATE_PYBIDS_DATABASE": false
     },
     {
       "NAME": "halfpipe",
