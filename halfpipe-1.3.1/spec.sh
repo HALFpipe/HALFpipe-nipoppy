@@ -20,6 +20,8 @@ seed_based_connectivity="\"type\": \"seed_based_connectivity\", \"seeds\": [\"L_
 reho="\"type\": \"reho\", ${smoothing}, \"zscore\": false"
 falff="\"type\": \"falff\", ${smoothing}, \"zscore\": false"
 
+touch "${working_directory}/log.txt" "${working_directory}/err.txt"
+
 cat <<EOF > "${working_directory}/spec.json"
 {
     "halfpipe_version": "1.3.0",
