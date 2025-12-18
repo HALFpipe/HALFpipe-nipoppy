@@ -42,11 +42,7 @@
           "--bind",
           "[[NIPOPPY_DPATH_PIPELINE_OUTPUT]]/err.txt"
         ]
-      }
-    },
-    {
-      "NAME": "tracking",
-      "ANALYSIS_LEVEL": "participant_session",
+      },
       "TRACKER_CONFIG_FILE": "tracker.json"
     }
   ],
