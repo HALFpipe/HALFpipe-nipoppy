@@ -9,7 +9,13 @@
     "ENV_VARS": {},
     "ARGS": [
       "--bind",
-      "[[FREESURFER_LICENSE_FILE]]:/opt/freesurfer/license.txt"
+      "[[FREESURFER_LICENSE_FILE]]:/opt/freesurfer/license.txt",
+      "--bind",
+      "[[NIPOPPY_DPATH_PIPELINE_WORK]]:[[NIPOPPY_DPATH_PIPELINE_OUTPUT]]",
+      "--bind",
+      "[[NIPOPPY_DPATH_PIPELINE_OUTPUT]]:[[NIPOPPY_DPATH_PIPELINE_OUTPUT]]/derivatives",
+      "--bind",
+      "[[NIPOPPY_DPATH_PIPELINE_OUTPUT]]/reports:[[NIPOPPY_DPATH_PIPELINE_OUTPUT]]/reports"
     ]
   },
   "STEPS": [
@@ -26,7 +32,17 @@
       "INVOCATION_FILE": "halfpipe-invocation.json",
       "DESCRIPTOR_FILE": "halfpipe-descriptor.json",
       "HPC_CONFIG_FILE": "hpc.json",
-      "PYBIDS_IGNORE_FILE": "pybids_ignore.json"
+      "PYBIDS_IGNORE_FILE": "pybids_ignore.json",
+      "CONTAINER_CONFIG": {
+        "ARGS": [
+          "--bind",
+          "[[NIPOPPY_DPATH_PIPELINE_OUTPUT]]/spec.json",
+          "--bind",
+          "[[NIPOPPY_DPATH_PIPELINE_OUTPUT]]/log.txt",
+          "--bind",
+          "[[NIPOPPY_DPATH_PIPELINE_OUTPUT]]/err.txt"
+        ]
+      }
     },
     {
       "NAME": "tracking",
