@@ -22,7 +22,7 @@ falff="\"type\": \"falff\", ${smoothing}, \"zscore\": false"
 
 touch "${working_directory}/log.txt" "${working_directory}/err.txt"
 
-cat <<EOF > "${working_directory}/spec.json"
+cat <<EOF >"${working_directory}/spec.json"
 {
     "halfpipe_version": "1.3.0",
     "schema_version": "3.0",
@@ -56,7 +56,7 @@ cat <<EOF > "${working_directory}/spec.json"
         "sloppy": false
     },
     "files": [
-        {"datatype": "bids", "path": "${bids_directory}"},
+        {"datatype": "bids", "path": "${bids_directory}", "tags": {"ses": "unnamed"}},
         {"datatype": "ref", "suffix": "atlas", "extension": ".nii.gz", "path": "${base_directory}/atlas-{desc}_dseg.nii.gz"},
         {"datatype": "ref", "suffix": "seed", "extension": ".nii.gz", "path": "${base_directory}/{desc}_seed_2009.nii.gz"}
     ],
